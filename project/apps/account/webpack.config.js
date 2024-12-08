@@ -1,5 +1,7 @@
 const { NxAppWebpackPlugin } = require('@nx/webpack/app-plugin');
 const { join } = require('path');
+const swaggerTransformer = require('../../swagger.config');
+
 
 module.exports = {
   output: {
@@ -15,6 +17,7 @@ module.exports = {
       optimization: false,
       outputHashing: 'none',
       generatePackageJson: true,
+      transformers: [swaggerTransformer],
     }),
   ],
 };
